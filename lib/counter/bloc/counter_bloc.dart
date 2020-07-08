@@ -24,12 +24,12 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
   ) async* {
     // Here we detect ehich event was sended
     if (event is CounterIncrement) {
+      if (this.counterValue < 10) this.counterValue++;
       if (this.counterValue >= 10) {
         /// [yield] is like return but it will be sended
         /// continuously till some event change return value
         yield CounterFull();
       } else {
-        this.counterValue++;
         yield CounterValue(this.counterValue);
       }
     }
