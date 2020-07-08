@@ -45,7 +45,9 @@ class CounterText extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline4,
                   );
                 }
-              })),
+              })
+              
+              ),
     );
   }
 }
